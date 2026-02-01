@@ -1,5 +1,10 @@
-Flask==2.3.3
-Flask-CORS==4.0.0
-Werkzeug==2.3.7
-gunicorn==21.2.0
-setuptools==69.5.1
+services:
+  - type: web
+    name: catacuti-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
