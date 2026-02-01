@@ -1,0 +1,36 @@
+services:
+  - type: web
+    name: catacuti-app
+    runtime: python
+    region: oregon  # or singapore, frankfurt, etc.
+    plan: free  # or starter, standard
+    branch: main
+    buildCommand: |
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true  # Render will generate one
+      - key: UPLOAD_FOLDER
+        value: uploads
+      - key: MAX_CONTENT_LENGTH
+        value: 16777216
+    
+    # Auto-scale settings
+    autoDeploy: true
+    healthCheckPath: /api/health
+    disk:
+      name: uploads
+      mountPath: /opt/render/project/src/uploads
+      sizeGB: 1
+
+databases:
+  - name: catacuti-db
+    region: oregon
+    plan: free  # free has 90MB storage, upgrade for more
+    databaseName: catacuti
+    user: catacuti_user

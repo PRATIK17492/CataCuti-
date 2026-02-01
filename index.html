@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CataCuti App - Learn Smarter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Content will be loaded here by JavaScript -->
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="login-container">
+                <div class="login-header">
+                    <h1>CataCuti App 🧠</h1>
+                    <p>Learn Smarter, Not Harder</p>
+                </div>
+
+                <div class="login-form">
+                    <input type="email" id="loginEmail" placeholder="Email Address">
+                    <input type="password" id="loginPassword" placeholder="Password">
+                    <input type="text" id="loginName" placeholder="Your Name (for registration)" style="display: none;">
+                    <select id="loginClass" style="display: none;">
+                        <option value="">Select Class/Grade</option>
+                        <option value="6th Grade">Class 6</option>
+                        <option value="7th Grade">Class 7</option>
+                        <option value="8th Grade">Class 8</option>
+                        <option value="9th Grade">Class 9</option>
+                        <option value="10th Grade">Class 10</option>
+                    </select>
+                    <select id="loginGender" style="display: none;">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" id="loginSchool" placeholder="School Name (for registration)" style="display: none;">
+                    
+                    <button onclick="handleLogin()" id="loginBtn">Login</button>
+                    <button onclick="toggleSignup()" class="switch-btn" id="switchBtn">Register as Student</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content admin-modal">
+            <div class="modal-header">
+                <h2>Admin Panel</h2>
+                <button onclick="closeAdminPanel()" class="close-btn">×</button>
+            </div>
+            <div class="admin-content">
+                <!-- Admin content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Doubt Solver Modal -->
+    <div id="aiModal" class="modal">
+        <div class="modal-content ai-modal">
+            <div class="modal-header">
+                <h2>AI Doubt Solver 🤖</h2>
+                <button onclick="closeAIModal()" class="close-btn">×</button>
+            </div>
+            <div class="ai-content">
+                <!-- AI chat content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quizModal" class="modal">
+        <div class="modal-content quiz-modal">
+            <div class="modal-header">
+                <h2>Take Quiz</h2>
+                <button onclick="closeQuizModal()" class="close-btn">×</button>
+            </div>
+            <div class="quiz-content">
+                <!-- Quiz content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h2>Video Lesson</h2>
+                <button onclick="closeVideoModal()" class="close-btn">×</button>
+            </div>
+            <div class="video-content">
+                <!-- Video content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notes Modal -->
+    <div id="notesModal" class="modal">
+        <div class="modal-content notes-modal">
+            <div class="modal-header">
+                <h2>Chapter Notes</h2>
+                <button onclick="closeNotesModal()" class="close-btn">×</button>
+            </div>
+            <div class="notes-content">
+                <!-- Notes content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="modal">
+        <div class="modal-content certificate-modal">
+            <div class="modal-header">
+                <h2>Certificate</h2>
+                <button onclick="closeCertificateModal()" class="close-btn">×</button>
+            </div>
+            <div class="certificate-content">
+                <!-- Certificate content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- File Viewer Modal -->
+    <div id="fileViewerModal" class="modal">
+        <div class="modal-content file-viewer-modal">
+            <div class="modal-header">
+                <h2 id="fileViewerTitle">File Viewer</h2>
+                <button onclick="closeFileViewer()" class="close-btn">×</button>
+            </div>
+            <div class="file-viewer-content" id="fileViewerContent">
+                <!-- File content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Classes Modal -->
+    <div id="liveClassesModal" class="modal">
+        <div class="modal-content live-classes-modal">
+            <div class="modal-header">
+                <h2>🎥 Live Classes</h2>
+                <button onclick="closeLiveClasses()" class="close-btn">×</button>
+            </div>
+            <div class="live-classes-content" id="liveClassesContent">
+                <!-- Live classes content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Class Management Modal -->
+    <div id="classModal" class="modal">
+        <div class="modal-content class-modal">
+            <div class="modal-header">
+                <h2>🏫 Manage Classes</h2>
+                <button onclick="closeClassModal()" class="close-btn">×</button>
+            </div>
+            <div class="class-content" id="classContent">
+                <!-- Class management content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

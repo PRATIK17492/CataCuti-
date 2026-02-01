@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+.env
+cata_cuti.db
+uploads/
+.DS_Store
+*.log
